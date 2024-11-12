@@ -40,3 +40,10 @@ class Board {
         return true;
     }
 }
+
+class Player {
+    constructor(name, token) {
+        this.name = name;
+        this.token = token;
+    }
+}
