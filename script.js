@@ -1,1 +1,1 @@
-const EMPTY_SLOT = '';
+const EMPTY_CELL = undefined;
