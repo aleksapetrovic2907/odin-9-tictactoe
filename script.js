@@ -29,4 +29,14 @@ class Board {
             }
         }
     }
+
+    trySetCellToken(row, col, token) {
+        const targetCell = this.cells[row][col];
+        if (targetCell.isOccupied()) {
+            return false;
+        }
+
+        targetCell.token = token;
+        return true;
+    }
 }
