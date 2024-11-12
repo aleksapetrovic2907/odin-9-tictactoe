@@ -1,18 +1,18 @@
-const EMPTY_CELL = undefined;
+const EMPTY_CELL_TOKEN = undefined;
 
 class Cell {
-    constructor(row, col, value = EMPTY_CELL) {
+    constructor(row, col, token = EMPTY_CELL_TOKEN) {
         this.row = row;
         this.col = col;
-        this.value = value;
+        this.token = token;
     }
 
     isEmpty() {
-        return this.value === EMPTY_CELL;
+        return this.token === EMPTY_CELL_TOKEN;
     }
 
     isOccupied() {
-        return this.value !== EMPTY_CELL;
+        return this.token !== EMPTY_CELL_TOKEN;
     }
 }
 
