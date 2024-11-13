@@ -1,10 +1,10 @@
 const EMPTY_CELL_TOKEN = undefined;
 
 class Cell {
-    constructor(row, col, token = EMPTY_CELL_TOKEN) {
+    constructor(row, col) {
         this.row = row;
         this.col = col;
-        this.token = token;
+        this.token = EMPTY_CELL_TOKEN;
     }
 
     isEmpty() {
