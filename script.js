@@ -65,4 +65,36 @@ class Game {
         if (token === this.player2.token) return this.player2;
         return null;
     }
+
+    checkForWin() {
+        // Vertical check.
+        for (let i = 0; i < this.board.columns; i++) {
+            if (this.board.cells[0][i].isOccupied() &&
+                this.board.cells.every(row => row[i].token === this.board.cells[0][i].token)) {
+                return this.getPlayerByToken(this.board.cells[0][i].token);
+            }
+        }
+
+        // Horizontal check.
+        for (let i = 0; i < this.board.rows; i++) {
+            if (this.board.cells[i][0].isOccupied() &&
+                this.board.cells[i].every(cell => cell.token === this.board.cells[i][0].token)) {
+                return this.getPlayerByToken(this.board.cells[i][0].token);
+            }
+        }
+
+        // Diagonal check (top-left to bottom-right).
+        if (this.board.cells[0][0].isOccupied() &&
+            this.board.cells.every((row, i) => row[i].token === this.board.cells[0][0].token)) {
+            return this.getPlayerByToken(this.board.cells[0][0].token);
+        }
+
+        // Diagonal check (top-right to bottom-left).
+        if (this.board.cells[0][this.board.columns - 1].isOccupied() &&
+            this.board.cells.every((row, i) => row[this.board.columns - 1 - i].token === this.board.cells[0][this.board.columns - 1].token)) {
+            return this.getPlayerByToken(this.board.cells[0][this.board.columns - 1].token);
+        }
+
+        return null;
+    }
 }
