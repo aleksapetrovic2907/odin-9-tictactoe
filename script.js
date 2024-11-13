@@ -66,7 +66,7 @@ class Game {
         return null;
     }
 
-    checkForWin() {
+    checkForWinner() {
         // Vertical check.
         for (let i = 0; i < this.board.columns; i++) {
             if (this.board.cells[0][i].isOccupied() &&
