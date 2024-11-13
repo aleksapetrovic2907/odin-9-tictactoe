@@ -56,6 +56,15 @@ class Game {
         this.turn = this.player1;
     }
 
+    tryPlayMove(row, column) {
+        if (this.board.trySetCellToken(row, column, this.turn.token)) {
+            this.swapTurn();
+            return true;
+        }
+
+        return false;
+    }
+
     swapTurn() {
         this.turn = this.turn === this.player1 ? this.player2 : this.player1;
     }
