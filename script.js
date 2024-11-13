@@ -59,4 +59,10 @@ class Game {
     swapTurn() {
         this.turn = this.turn === this.player1 ? this.player2 : this.player1;
     }
+
+    getPlayerByToken(token) {
+        if (token === this.player1.token) return this.player1;
+        if (token === this.player2.token) return this.player2;
+        return null;
+    }
 }
