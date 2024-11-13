@@ -97,4 +97,11 @@ class Game {
 
         return null;
     }
+
+    checkForDraw() {
+        const isBoardFull = this.board.cells.every(row => row.every(cell => cell.isOccupied()));
+        const noWinner = this.checkForWinner() === null;
+
+        return isBoardFull && noWinner;
+    }
 }
