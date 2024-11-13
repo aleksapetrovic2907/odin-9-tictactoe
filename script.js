@@ -55,4 +55,8 @@ class Game {
         this.board = new Board(3, 3);
         this.turn = this.player1;
     }
+
+    swapTurn() {
+        this.turn = this.turn === this.player1 ? this.player2 : this.player1;
+    }
 }
