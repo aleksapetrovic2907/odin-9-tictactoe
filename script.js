@@ -114,3 +114,33 @@ class Game {
         return isBoardFull && noWinner;
     }
 }
+
+// Generate players.
+const player1 = new Player("Player 1", "X");
+const player2 = new Player("Player 2", "O");
+
+// Generate game.
+const game = new Game(player1, player2);
+
+// Generate board in DOM.
+const board = document.querySelector(".board");
+
+for (let i = 0; i < game.board.rows; i++) {
+    for (let j = 0; j < game.board.columns; j++) {
+        let empty_cell = document.createElement("div");
+        empty_cell.classList.add("cell");
+        empty_cell.id = `${i},${j}`;
+        empty_cell.addEventListener("click", () => {
+            makeMove(empty_cell.id);
+        });
+
+        board.appendChild(empty_cell);
+    }
+}
+
+function makeMove(cellId) {
+    let cellIdArray = cellId.split(',');
+    let x = cellIdArray[0];
+    let y = cellIdArray[1];
+    game.tryPlayMove(x, y);
+}
