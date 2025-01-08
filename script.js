@@ -55,9 +55,12 @@ class Game {
         this.player2 = player2;
         this.board = new Board(SIZE, SIZE);
         this.turn = this.player1;
+        this.isGameOver = false;
     }
 
     tryPlayMove(row, column) {
+        if (this.isGameOver) return false;
+
         if (this.board.trySetCellToken(row, column, this.turn.token)) {
             this.swapTurn();
             return true;
@@ -149,9 +152,11 @@ function playMove(empty_cell, i, j) {
     let winner = game.checkForWinner();
     if (winner !== null) {
         resultContainer.innerText = `${winner.name} wins!`;
+        game.isGameOver = true;
     }
 
     if (game.checkForDraw()) {
         resultContainer.innerText = "The game is a draw!";
+        game.isGameOver = true;
     }
 }
