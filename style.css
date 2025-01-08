@@ -34,7 +34,7 @@ body {
     grid-template-columns: repeat(3, 128px);
     grid-template-rows: repeat(3, 128px);
 
-    box-shadow: var(--color-greenish-yellow) 0px 3px 8px;
+    box-shadow: rgba(37, 37, 37, 0.233) 0px 2px 8px 0px;
     border-radius: var(--cell-border-radius);
 }
 
