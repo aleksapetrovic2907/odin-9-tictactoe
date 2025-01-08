@@ -25,6 +25,10 @@ body {
     align-items: center;
 }
 
+.container > h1 {
+    color: var(--color-white);
+}
+
 .board {
     display: grid;
     grid-template-columns: repeat(3, 128px);
