@@ -3,6 +3,7 @@
     --color-leaf: #809D3C;
     --color-light-olive: #A9C46C;
     --color-greenish-yellow: #F4FFC3;
+    --color-white: #ffffff;
 }
 
 .board {
@@ -10,4 +11,14 @@
     grid-template-columns: repeat(3, 128px);
     grid-template-rows: repeat(3, 128px);
     gap: 1px;
+}
+
+.cell {
+    border: 2px solid var(--color-white);
+    font-size: 2rem;
+    color: var(--color-white);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
