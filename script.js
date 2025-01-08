@@ -126,6 +126,9 @@ const game = new Game(player1, player2);
 // Generate board in DOM.
 const board = document.querySelector(".board");
 
+// Grab other elements from DOM.
+const resultContainer = document.querySelector(".result-container");
+
 for (let i = 0; i < game.board.rows; i++) {
     for (let j = 0; j < game.board.columns; j++) {
         let empty_cell = document.createElement("div");
@@ -145,10 +148,10 @@ function playMove(empty_cell, i, j) {
     
     let winner = game.checkForWinner();
     if (winner !== null) {
-        console.log(winner.name);
+        resultContainer.innerText = `${winner.name} wins!`;
     }
 
     if (game.checkForDraw()) {
-        console.log("The game is a draw.");
+        resultContainer.innerText = "The game is a draw!";
     }
 }
