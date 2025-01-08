@@ -29,6 +29,7 @@ body {
     grid-template-rows: repeat(3, 128px);
 
     box-shadow: var(--color-greenish-yellow) 0px 3px 8px;
+    border-radius: 6px;
 }
 
 .cell {
@@ -39,4 +40,20 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.cell:nth-child(1) {
+    border-top-left-radius: 6px;
+}
+
+.cell:nth-child(3) {
+    border-top-right-radius: 6px;
+}
+
+.cell:nth-child(7) {
+    border-bottom-left-radius: 6px;
+}
+
+.cell:nth-child(9) {
+    border-bottom-right-radius: 6px;
 }
