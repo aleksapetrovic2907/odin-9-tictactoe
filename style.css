@@ -39,7 +39,7 @@ body {
 }
 
 .cell {
-    border: 2px solid var(--color-white);
+    border: 1px solid var(--color-white);
     font-size: 2rem;
     color: var(--color-white);
 
