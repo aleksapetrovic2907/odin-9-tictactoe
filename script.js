@@ -130,18 +130,10 @@ for (let i = 0; i < game.board.rows; i++) {
     for (let j = 0; j < game.board.columns; j++) {
         let empty_cell = document.createElement("div");
         empty_cell.classList.add("cell");
-        empty_cell.id = `${i},${j}`;
         empty_cell.addEventListener("click", () => {
-            makeMove(empty_cell.id);
+            game.tryPlayMove(i, j);
         });
 
         board.appendChild(empty_cell);
     }
-}
-
-function makeMove(cellId) {
-    let cellIdArray = cellId.split(',');
-    let x = cellIdArray[0];
-    let y = cellIdArray[1];
-    game.tryPlayMove(x, y);
 }
