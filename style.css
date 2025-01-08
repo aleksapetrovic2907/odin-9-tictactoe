@@ -40,7 +40,7 @@ body {
 
 .cell {
     border: 1px solid var(--color-white);
-    font-size: 2rem;
+    font-size: 3rem;
     font-weight: lighter;
     color: var(--color-white);
 
