@@ -6,6 +6,11 @@
     --color-white: #ffffff;
 }
 
+body {
+    margin: 0;
+    padding: 0;
+}
+
 .board {
     display: grid;
     grid-template-columns: repeat(3, 128px);
