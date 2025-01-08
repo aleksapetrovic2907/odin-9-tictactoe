@@ -1,4 +1,5 @@
 const EMPTY_CELL_TOKEN = undefined;
+const SIZE = 3;
 
 class Cell {
     constructor(row, col) {
@@ -52,7 +53,7 @@ class Game {
     constructor(player1, player2) {
         this.player1 = player1;
         this.player2 = player2;
-        this.board = new Board(3, 3);
+        this.board = new Board(SIZE, SIZE);
         this.turn = this.player1;
     }
 
