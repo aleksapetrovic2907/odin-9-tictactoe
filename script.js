@@ -131,7 +131,9 @@ for (let i = 0; i < game.board.rows; i++) {
         let empty_cell = document.createElement("div");
         empty_cell.classList.add("cell");
         empty_cell.addEventListener("click", () => {
-            game.tryPlayMove(i, j);
+            if(game.tryPlayMove(i, j)) {
+                empty_cell.innerText = game.board.cells[i][j].token;
+            }
         });
 
         board.appendChild(empty_cell);
