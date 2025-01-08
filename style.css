@@ -1,3 +1,10 @@
+:root {
+    --color-moss-green: #5D8736;
+    --color-leaf: #809D3C;
+    --color-light-olive: #A9C46C;
+    --color-greenish-yellow: #F4FFC3;
+}
+
 .board {
     display: grid;
     grid-template-columns: repeat(3, 128px);
